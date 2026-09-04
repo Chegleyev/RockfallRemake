@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "python3 -m http.server 3000",
-    "test": "node test/test_levels.js",
+    "test": "node test/test_levels.js && node test/test_bomb.js",
     "build": "python3 tools/build_standalone.py"
   },
   "keywords": ["rockfall", "zx-spectrum", "boulderdash", "webgl"],

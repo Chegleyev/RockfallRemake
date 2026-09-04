@@ -177,6 +177,10 @@ export class RockfallPhysics {
       }
     } else if (isBomb(targetTile) && dir.dy === 0) {
       // Horizontal push bomb across flat surface!
+      const targetIdx = targetY * this.width + targetX;
+      if (this.falling[targetIdx] === 1) {
+        return false;
+      }
       const behindX = targetX + dir.dx;
       const behindY = targetY;
       if (this.getTile(behindX, behindY) === TILES.EMPTY) {
@@ -188,8 +192,8 @@ export class RockfallPhysics {
         this.emit('push', { x: targetX, y: targetY });
         return true;
       }
-    } else if (isBomb(targetTile)) {
-      // Touching a bomb detonates it!
+    } else if (isBomb(targetTile) && dir.dy === -1 && this.falling[targetY * this.width + targetX] === 1) {
+      // Moving UP directly into a falling bomb causes impact detonation!
       this.explode(targetX, targetY, false);
       return true;
     } else if (isCreature(targetTile)) {
