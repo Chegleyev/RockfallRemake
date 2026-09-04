@@ -1,5 +1,7 @@
 # Rockfall (ZX Spectrum) — Modern WebGL Remaster
 
+[![Play Online in Browser](https://img.shields.io/badge/▶%20PLAY%20ONLINE-GitHub%20Pages-2ea44f?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chegleyev.github.io/RockfallRemake/)
+
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![WebGL 2.0](https://img.shields.io/badge/WebGL-2.0-990000?logo=webgl&logoColor=white)](https://www.khronos.org/webgl/)
 [![Web Audio API](https://img.shields.io/badge/Web%20Audio%20API-Synthesized-4B0082)](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
@@ -9,24 +11,31 @@
 
 Современный веб-ремастер культовой игры **Rockfall** для платформы **ZX Spectrum** (1985, автор оригинальной игры — Иэн Коллиер / *Ian Collier*). 
 
+> ### 🕹️ **[ИГРАТЬ ОНЛАЙН В БРАУЗЕРЕ (GitHub Pages)](https://chegleyev.github.io/RockfallRemake/)**
+> Запускается мгновенно без скачивания и установки на ПК, смартфонах и планшетах.
+
 Проект представляет собой точную реконструкцию игры на технологиях современного веба (WebGL 2.0, HTML5 Canvas 2D, Web Audio API) с сохранением оригинальной физики и дизайна уровней ZX Spectrum.
 
 ---
 
 ## 🎮 Быстрый запуск
 
-### Вариант 1. Автономный оффлайн-файл (Без установки)
-Просто откройте файл [`dist/rockfall.html`](dist/rockfall.html) в любом современном веб-браузере (Chrome, Firefox, Safari, Edge). Игра упакована в единый файл размером ~270 КБ, не требует интернета или локального сервера и работает даже через протокол `file://`.
+### Вариант 1. Играть онлайн в браузере (Без скачивания)
+Просто перейдите по ссылке: 👉 **[https://chegleyev.github.io/RockfallRemake/](https://chegleyev.github.io/RockfallRemake/)**  
+Игра мгновенно откроется в любом современном браузере.
 
-### Вариант 2. Локальный сервер разработки
-Для запуска модульной версии (`src/`):
+### Вариант 2. Автономный оффлайн-файл
+Просто откройте файл [`dist/rockfall.html`](dist/rockfall.html) в веб-браузере. Игра упакована в единый файл размером ~270 КБ, не требует интернета или локального сервера и работает даже через протокол `file://`.
+
+### Вариант 3. Локальный сервер разработки
+Для запуска модульной версии исходников (`src/`):
 
 ```bash
 # Клонируйте репозиторий
-git clone https://github.com/<ваш-аккаунт>/Rockfall.git
-cd Rockfall
+git clone https://github.com/Chegleyev/RockfallRemake.git
+cd RockfallRemake
 
-# Запуск через встроенный Python-сервер
+# Запуск через встроенный веб-сервер
 npm start
 # или напрямую:
 python3 tools/server.py
