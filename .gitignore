@@ -16,9 +16,13 @@ scratch/
 tmp/
 temp/
 
-# Intermediate reverse-engineering memory dumps
-# (can be re-generated anytime from ROCKFLDK.SCL via tools/unpack_scl.py)
+# Intermediate reverse-engineering memory dumps and disk images
 *.bin
+*.scl
+*.SCL
+*.trd
+*.tap
+*.tzx
 ram_unpacked.bin
 rockfall_unpacked_ram.bin
 
