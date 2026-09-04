@@ -1,0 +1,14 @@
+{
+  "name": "rockfall-webgl",
+  "version": "1.0.0",
+  "description": "Rockfall (ZX Spectrum) Modern WebGL Remaster",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "test": "node test/test_levels.js",
+    "build": "python3 tools/build_standalone.py"
+  },
+  "keywords": ["rockfall", "zx-spectrum", "boulderdash", "webgl"],
+  "author": "Ian Collier / WebGL Port",
+  "license": "MIT"
+}

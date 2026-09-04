@@ -1,0 +1,809 @@
+L_EB00:    LD (0x5C7D), HL
+L_EB03:    EX AF, AF'
+L_EB04:    JR NZ, +11 ; -> L_EB11
+L_EB06:    LD A, L
+L_EB07:    DB 0xC6
+L_EB08:    ADD A, B
+L_EB09:    DB 0x6F
+L_EB0A:    LD DE, 0x0004
+L_EB0D:    CALL 0x03B5
+L_EB10:    XOR A
+L_EB11:    EX AF, AF'
+L_EB12:    LD BC, 0xAF00
+L_EB15:    LD DE, 0x0100
+L_EB18:    CALL 0x24BA
+L_EB1B:    POP HL
+L_EB1C:    PUSH HL
+L_EB1D:    LD A, 0xFF
+L_EB1F:    DB 0x95
+L_EB20:    DB 0x6F
+L_EB21:    LD (0x5C7D), HL
+L_EB24:    LD BC, 0xAF00
+L_EB27:    LD DE, 0x0100
+L_EB2A:    CALL 0x24BA
+L_EB2D:    POP HL
+L_EB2E:    LD A, L
+L_EB2F:    DB 0xC6
+L_EB30:    INC B
+L_EB31:    DB 0x6F
+L_EB32:    CP 0x7F
+L_EB34:    DB 0x38
+L_EB35:    RET
+L_EB36:    CALL 0xFAE6
+L_EB39:    LD SP, (0x5B88)
+L_EB3D:    LD HL, 0x2758
+L_EB40:    EXX
+L_EB41:    LD BC, 0xFFFF
+L_EB44:    RET
+L_EB45:    XOR A
+L_EB46:    DB 0xDB
+L_EB47:    CP 0x2F
+L_EB49:    DB 0xE6
+L_EB4A:    RRA
+L_EB4B:    JR NZ, -8 ; -> L_EB45
+L_EB4D:    XOR A
+L_EB4E:    DB 0xDB
+L_EB4F:    CP 0x2F
+L_EB51:    DB 0xE6
+L_EB52:    RRA
+L_EB53:    JR Z, -8 ; -> L_EB4D
+L_EB55:    JP 0xE963
+L_EB58:    LD HL, 0xDF1E
+L_EB5B:    LD (0x5B82), HL
+L_EB5E:    LD A, H
+L_EB5F:    LD HL, 0x6E40
+L_EB62:    LD BC, 0x0780
+L_EB65:    CPIR
+L_EB67:    JR NZ, +103 ; -> L_EBD0
+L_EB69:    CP 0xDF
+L_EB6B:    JR NZ, +18 ; -> L_EB7F
+L_EB6D:    PUSH HL
+L_EB6E:    LD BC, 0x0016
+L_EB71:    LD DE, 0x1F03
+L_EB74:    DB 0x26
+L_EB75:    ADD HL, BC
+L_EB76:    CALL 0xF1E0
+L_EB79:    LD A, 0x03
+L_EB7B:    DB 0xCC
+L_EB7C:    LD A, 0xED
+L_EB7E:    POP HL
+L_EB7F:    LD BC, 0xFFBE
+L_EB82:    ADD HL, BC
+L_EB83:    LD BC, 0x003D
+L_EB86:    LD E, 0x03
+L_EB88:    LD D, 0x03
+L_EB8A:    LD A, (HL)
+L_EB8B:    DB 0xE6
+L_EB8C:    RRA
+L_EB8D:    CP 0x03
+L_EB8F:    JR Z, +18 ; -> L_EBA3
+L_EB91:    DB 0xD6
+L_EB92:    LD C, 0xD6
+L_EB94:    INC B
+L_EB95:    DB 0x38
+L_EB96:    DEC E
+L_EB97:    DB 0xD6
+L_EB98:    INC B
+L_EB99:    DB 0x38
+L_EB9A:    DEC D
+L_EB9B:    CP 0x08
+L_EB9D:    DB 0x38
+L_EB9E:    JR NZ, +58 ; -> L_EBDA
+L_EBA0:    ADD A, D
+L_EBA1:    DB 0x5B
+L_EBA2:    LD (HL), A
+L_EBA3:    INC HL
+L_EBA4:    DEC D
+L_EBA5:    JR NZ, -29 ; -> L_EB8A
+L_EBA7:    ADD HL, BC
+L_EBA8:    DEC E
+L_EBA9:    JR NZ, -35 ; -> L_EB88
+L_EBAB:    LD A, (0x5B83)
+L_EBAE:    JR -81 ; -> L_EB5F
+L_EBB0:    LD (HL), 0xDE
+L_EBB2:    JR -17 ; -> L_EBA3
+L_EBB4:    LD A, (0x5B82)
+L_EBB7:    CP 0x1E
+L_EBB9:    JR NZ, -28 ; -> L_EB9F
+L_EBBB:    LD (HL), 0xDF
+L_EBBD:    JR -28 ; -> L_EBA3
+L_EBBF:    CP 0x04
+L_EBC1:    PUSH BC
+L_EBC2:    LD BC, 0x000A
+L_EBC5:    DB 0x38
+L_EBC6:    INC BC
+L_EBC7:    LD BC, 0x0019
+L_EBCA:    CALL 0xE85B
+L_EBCD:    POP BC
+L_EBCE:    JR -49 ; -> L_EB9F
+L_EBD0:    LD A, (0x5B82)
+L_EBD3:    CP 0x1E
+L_EBD5:    DB 0xC0
+L_EBD6:    LD HL, 0xDE0A
+L_EBD9:    JR -128 ; -> L_EB5B
+L_EBDB:    DB 0xE6
+L_EBDC:    RRCA
+L_EBDD:    DB 0xD6
+L_EBDE:    RLCA
+L_EBDF:    INC A
+L_EBE0:    DB 0x38
+L_EBE1:    LD D, 0x87
+L_EBE3:    ADD A, A
+L_EBE4:    CP 0x10
+L_EBE6:    DB 0x38
+L_EBE7:    EX AF, AF'
+L_EBE8:    CP 0x14
+L_EBEA:    DB 0x38
+L_EBEB:    INC C
+L_EBEC:    JR Z, +8 ; -> L_EBF6
+L_EBEE:    DB 0xD6
+L_EBEF:    INC B
+L_EBF0:    DB 0xAB
+L_EBF1:    DB 0xE6
+L_EBF2:    DB 0xFC
+L_EBF3:    DB 0xAB
+L_EBF4:    JR +2 ; -> L_EBF8
+L_EBF6:    DB 0xD6
+L_EBF7:    LD (BC), A
+L_EBF8:    DB 0xC6
+L_EBF9:    LD B, 0x12
+L_EBFB:    INC DE
+L_EBFC:    RET
+L_EBFD:    XOR A
+L_EBFE:    LD (0x5B8A), A
+L_EC01:    LD (0x5B88), SP
+L_EC05:    LD A, (0x5B7E)
+L_EC08:    RLCA
+L_EC09:    RLCA
+L_EC0A:    DB 0xC6
+L_EC0B:    DB 0x76
+L_EC0C:    DB 0x67
+L_EC0D:    DB 0x2E
+L_EC0E:    NOP
+L_EC0F:    LD DE, 0x6E00
+L_EC12:    LD BC, 0x0400
+L_EC15:    LD A, (HL)
+L_EC16:    RRCA
+L_EC17:    RRCA
+L_EC18:    RRCA
+L_EC19:    RRCA
+L_EC1A:    CALL 0xEB76
+L_EC1D:    LD A, (HL)
+L_EC1E:    CALL 0xEB76
+L_EC21:    INC HL
+L_EC22:    DEC BC
+L_EC23:    LD A, B
+L_EC24:    DB 0xB1
+L_EC25:    JR NZ, -18 ; -> L_EC15
+L_EC27:    LD HL, 0x6E40
+L_EC2A:    LD BC, 0x0780
+L_EC2D:    LD A, 0x06
+L_EC2F:    CPIR
+L_EC31:    DB 0xC0
+L_EC32:    DEC HL
+L_EC33:    LD A, L
+L_EC34:    DB 0xE6
+L_EC35:    DB 0x3F
+L_EC36:    LD E, A
+L_EC37:    LD A, H
+L_EC38:    DB 0xD6
+L_EC39:    DB 0x6E
+L_EC3A:    DB 0xCB
+L_EC3B:    DB 0x25
+L_EC3C:    RLA
+L_EC3D:    DB 0xCB
+L_EC3E:    DB 0x25
+L_EC3F:    RLA
+L_EC40:    LD D, A
+L_EC41:    DB 0xED
+L_EC42:    DB 0x53
+L_EC43:    LD A, L
+L_EC44:    DB 0x5C
+L_EC45:    LD HL, 0x6E40
+L_EC48:    LD BC, 0x0780
+L_EC4B:    LD A, 0x05
+L_EC4D:    CPIR
+L_EC4F:    DEC HL
+L_EC50:    LD (0x5B86), HL
+L_EC53:    LD (HL), 0x01
+L_EC55:    LD A, (0x5B7E)
+L_EC58:    LD C, A
+L_EC59:    LD B, 0x00
+L_EC5B:    LD HL, 0xED7E
+L_EC5E:    ADD HL, BC
+L_EC5F:    LD A, (HL)
+L_EC60:    LD (0x5B85), A
+L_EC63:    DB 0x48
+L_EC64:    CALL 0xE85B
+L_EC67:    LD A, 0xFF
+L_EC69:    LD (0x5B84), A
+L_EC6C:    CALL 0xE600
+L_EC6F:    XOR A
+L_EC70:    LD (0x5C08), A
+L_EC73:    LD B, 0x32
+L_EC75:    EI
+L_EC76:    DB 0x76
+L_EC77:    DJNZ -3 ; -> L_EC76
+L_EC79:    CALL 0xED4C
+L_EC7C:    LD A, 0xFF
+L_EC7E:    LD (0x5B84), A
+L_EC81:    CALL 0xE69E
+L_EC84:    CALL 0xEAF3
+L_EC87:    CALL 0xE89C
+L_EC8A:    CALL 0xE600
+L_EC8D:    JR -22 ; -> L_EC79
+L_EC8F:    LD DE, 0x0190
+L_EC92:    XOR A
+L_EC93:    LD (0x5C08), A
+L_EC96:    LD B, A
+L_EC97:    LD C, A
+L_EC98:    DB 0x76
+L_EC99:    LD A, (0x5C08)
+L_EC9C:    DB 0xA7
+L_EC9D:    DB 0xC0
+L_EC9E:    DEC DE
+L_EC9F:    LD A, D
+L_ECA0:    DB 0xB3
+L_ECA1:    JR NZ, -11 ; -> L_EC98
+L_ECA3:    DEC A
+L_ECA4:    LD (0x5B8A), A
+L_ECA7:    LD HL, 0xECF2
+L_ECAA:    LD B, 0x08
+L_ECAC:    LD A, (HL)
+L_ECAD:    INC HL
+L_ECAE:    LD C, A
+L_ECAF:    INC A
+L_ECB0:    JR NZ, +9 ; -> L_ECBB
+L_ECB2:    DJNZ -8 ; -> L_ECAC
+L_ECB4:    LD DE, 0xECF2
+L_ECB7:    LD C, 0x08
+L_ECB9:    LDIR
+L_ECBB:    DB 0xED
+L_ECBC:    LD E, A
+L_ECBD:    DB 0xE6
+L_ECBE:    RRCA
+L_ECBF:    CP 0x08
+L_ECC1:    DB 0x30
+L_ECC2:    DB 0xF8
+L_ECC3:    LD E, A
+L_ECC4:    LD D, 0x00
+L_ECC6:    LD HL, 0xECF2
+L_ECC9:    ADD HL, DE
+L_ECCA:    LD A, (HL)
+L_ECCB:    INC A
+L_ECCC:    JR NZ, +8 ; -> L_ECD6
+L_ECCE:    LD HL, 0xECF2
+L_ECD1:    DB 0x41
+L_ECD2:    LD A, C
+L_ECD3:    CPIR
+L_ECD5:    DEC HL
+L_ECD6:    LD A, (HL)
+L_ECD7:    LD (HL), 0xFF
+L_ECD9:    LD (0x5B7E), A
+L_ECDC:    CALL 0x0D6B
+L_ECDF:    LD A, 0xFE
+L_ECE1:    CALL 0x1601
+L_ECE4:    XOR A
+L_ECE5:    LD DE, 0xECB3
+L_ECE8:    CALL 0x0C0A
+L_ECEB:    LD A, (0x5B7E)
+L_ECEE:    LD C, A
+L_ECEF:    LD B, 0x00
+L_ECF1:    CALL 0x1A1B
+L_ECF4:    LD B, 0x4B
+L_ECF6:    DB 0x76
+L_ECF7:    LD A, (0x5C08)
+L_ECFA:    DB 0xA7
+L_ECFB:    DB 0xC0
+L_ECFC:    DJNZ -8 ; -> L_ECF6
+L_ECFE:    CALL 0x0D6B
+L_ED01:    LD A, 0x10
+L_ED03:    RST 10H
+L_ED04:    XOR A
+L_ED05:    RST 10H
+L_ED06:    LD A, (0x5B7E)
+L_ED09:    LD HL, 0xF357
+L_ED0C:    LD BC, 0x05A1
+L_ED0F:    CPIR
+L_ED11:    DB 0xC0
+L_ED12:    LD (0x5B8B), HL
+L_ED15:    JP 0xEB9C
+L_ED18:    ADD A, B
+L_ED19:    LD D, 0x05
+L_ED1B:    RLCA
+L_ED1C:    INC D
+L_ED1D:    LD BC, 0x4544
+L_ED20:    DB 0x4D
+L_ED21:    LD C, A
+L_ED22:    DB 0x4E
+L_ED23:    DB 0x53
+L_ED24:    DB 0x54
+L_ED25:    DB 0x52
+L_ED26:    DB 0x41
+L_ED27:    DB 0x54
+L_ED28:    DB 0x49
+L_ED29:    LD C, A
+L_ED2A:    DB 0x4E
+L_ED2B:    JR NZ, +71 ; -> L_ED74
+L_ED2D:    DB 0x41
+L_ED2E:    DB 0x4D
+L_ED2F:    DB 0x45
+L_ED30:    INC D
+L_ED31:    NOP
+L_ED32:    LD D, 0x07
+L_ED34:    INC BC
+L_ED35:    DB 0x50
+L_ED36:    DB 0x52
+L_ED37:    DB 0x45
+L_ED38:    DB 0x53
+L_ED39:    DB 0x53
+L_ED3A:    JR NZ, +65 ; -> L_ED7D
+L_ED3C:    DB 0x4E
+L_ED3D:    DB 0x59
+L_ED3E:    JR NZ, +75 ; -> L_ED8B
+L_ED40:    DB 0x45
+L_ED41:    DB 0x59
+L_ED42:    JR NZ, +84 ; -> L_ED98
+L_ED44:    LD C, A
+L_ED45:    JR NZ, +69 ; -> L_ED8C
+L_ED47:    DB 0x4E
+L_ED48:    DB 0x44
+L_ED49:    JR NZ, +68 ; -> L_ED8F
+L_ED4B:    DB 0x45
+L_ED4C:    DB 0x4D
+L_ED4D:    LD C, A
+L_ED4E:    LD D, 0x0A
+L_ED50:    INC C
+L_ED51:    DB 0x4C
+L_ED52:    DB 0x45
+L_ED53:    DB 0x56
+L_ED54:    DB 0x45
+L_ED55:    DB 0x4C
+L_ED56:    DB 0xA0
+L_ED57:    NOP
+L_ED58:    INC BC
+L_ED59:    EX AF, AF'
+L_ED5A:    ADD HL, BC
+L_ED5B:    LD (DE), A
+L_ED5C:    INC DE
+L_ED5D:    DEC D
+L_ED5E:    LD D, 0x00
+L_ED60:    INC BC
+L_ED61:    EX AF, AF'
+L_ED62:    ADD HL, BC
+L_ED63:    LD (DE), A
+L_ED64:    INC DE
+L_ED65:    DEC D
+L_ED66:    LD D, 0x01
+L_ED68:    LD (BC), A
+L_ED69:    NOP
+L_ED6A:    LD DE, 0x7004
+L_ED6D:    DB 0x26
+L_ED6E:    RLCA
+L_ED6F:    CALL 0xF1E0
+L_ED72:    JR Z, +7 ; -> L_ED7B
+L_ED74:    LD B, 0x23
+L_ED76:    DB 0x76
+L_ED77:    DJNZ -3 ; -> L_ED76
+L_ED79:    JR +15 ; -> L_ED8A
+L_ED7B:    LD B, 0x96
+L_ED7D:    PUSH BC
+L_ED7E:    LD HL, 0x012C
+L_ED81:    LD DE, 0x0006
+L_ED84:    CALL 0x03B5
+L_ED87:    POP BC
+L_ED88:    DJNZ -13 ; -> L_ED7D
+L_ED8A:    LD A, 0x05
+L_ED8C:    LD (0x5B7F), A
+L_ED8F:    LD A, (0x5B7E)
+L_ED92:    INC A
+L_ED93:    LD B, A
+L_ED94:    ADD A, A
+L_ED95:    ADD A, A
+L_ED96:    ADD A, B
+L_ED97:    DB 0x6F
+L_ED98:    DB 0x26
+L_ED99:    NOP
+L_ED9A:    ADD HL, HL
+L_ED9B:    DB 0x44
+L_ED9C:    DB 0x4D
+L_ED9D:    CALL 0xE85B
+L_EDA0:    JP 0xEAD1
+L_EDA3:    LD E, A
+L_EDA4:    LD A, (0x5B84)
+L_EDA7:    INC A
+L_EDA8:    JR Z, +2 ; -> L_EDAC
+L_EDAA:    DB 0xBB
+L_EDAB:    DB 0xD0
+L_EDAC:    LD A, E
+L_EDAD:    LD (0x5B84), A
+L_EDB0:    RET
+L_EDB1:    LD A, (0x5B84)
+L_EDB4:    INC A
+L_EDB5:    DB 0xC8
+L_EDB6:    LD B, 0x0A
+L_EDB8:    DEC A
+L_EDB9:    JR Z, +68 ; -> L_EDFF
+L_EDBB:    LD B, 0x28
+L_EDBD:    CP 0x03
+L_EDBF:    JR Z, +62 ; -> L_EDFF
+L_EDC1:    LD HL, 0x0050
+L_EDC4:    LD DE, 0x0008
+L_EDC7:    DEC A
+L_EDC8:    DB 0xCA
+L_EDC9:    DB 0xB5
+L_EDCA:    INC BC
+L_EDCB:    DEC A
+L_EDCC:    DB 0xC0
+L_EDCD:    LD HL, 0x00C8
+L_EDD0:    LD B, 0x0F
+L_EDD2:    PUSH HL
+L_EDD3:    PUSH BC
+L_EDD4:    LD DE, 0x0010
+L_EDD7:    CALL 0x03B5
+L_EDDA:    POP BC
+L_EDDB:    POP HL
+L_EDDC:    LD DE, 0xFFFB
+L_EDDF:    ADD HL, DE
+L_EDE0:    DJNZ -16 ; -> L_EDD2
+L_EDE2:    RET
+L_EDE3:    INC HL
+L_EDE4:    LD B, 0x32
+L_EDE6:    JR Z, +72 ; -> L_EE30
+L_EDE8:    DB 0x4B
+L_EDE9:    DB 0x44
+L_EDEA:    INC HL
+L_EDEB:    DB 0x46
+L_EDEC:    LD (0x3546), A
+L_EDEF:    LD E, 0x3C
+L_EDF1:    LD (HL), 0x2B
+L_EDF3:    DB 0x63
+L_EDF4:    LD (0x3528), A
+L_EDF7:    DB 0x41
+L_EDF8:    DB 0x50
+L_EDF9:    DB 0x3B
+L_EDFA:    DB 0x50
+L_EDFB:    DB 0x63
+L_EDFC:    DB 0x50
+L_EDFD:    DB 0x63
+L_EDFE:    DB 0x62
+L_EDFF:    LD HL, 0x03F8
+L_EE02:    LD A, (HL)
+L_EE03:    INC HL
+L_EE04:    LD C, 0x08
+L_EE06:    LD D, A
+L_EE07:    DB 0xE6
+L_EE08:    JR -45 ; -> L_EDDD
+L_EE0A:    CP 0x1E
+L_EE0C:    INC D
+L_EE0D:    PUSH AF
+L_EE0E:    POP AF
+L_EE0F:    DEC E
+L_EE10:    JR NZ, -5 ; -> L_EE0D
+L_EE12:    LD A, D
+L_EE13:    RRCA
+L_EE14:    DEC C
+L_EE15:    JR NZ, -17 ; -> L_EE06
+L_EE17:    DJNZ -23 ; -> L_EE02
+L_EE19:    RET
+L_EE1A:    LD HL, 0xEE1D
+L_EE1D:    LD B, 0x05
+L_EE1F:    PUSH BC
+L_EE20:    PUSH HL
+L_EE21:    LD A, B
+L_EE22:    DEC A
+L_EE23:    LD DE, 0xEE31
+L_EE26:    CALL 0x0C0A
+L_EE29:    XOR A
+L_EE2A:    LD (0x5C08), A
+L_EE2D:    DB 0xFD
+L_EE2E:    DB 0xCB
+L_EE2F:    LD BC, 0x3AAE
+L_EE32:    EX AF, AF'
+L_EE33:    DB 0x5C
+L_EE34:    DB 0xA7
+L_EE35:    JR Z, -6 ; -> L_EE31
+L_EE37:    LD BC, 0xFEFE
+L_EE3A:    DB 0xED
+L_EE3B:    LD A, B
+L_EE3C:    LD DE, 0x0005
+L_EE3F:    RRA
+L_EE40:    DB 0x30
+L_EE41:    LD A, (BC)
+L_EE42:    INC D
+L_EE43:    DEC E
+L_EE44:    JR NZ, -7 ; -> L_EE3F
+L_EE46:    DB 0xCB
+L_EE47:    NOP
+L_EE48:    DB 0x38
+L_EE49:    DB 0xF0
+L_EE4A:    JR -35 ; -> L_EE29
+L_EE4C:    LD A, (0x5C08)
+L_EE4F:    CP 0x20
+L_EE51:    DB 0x30
+L_EE52:    ADD HL, BC
+L_EE53:    CP 0x0D
+L_EE55:    JR NZ, -46 ; -> L_EE29
+L_EE57:    LD A, 0x45
+L_EE59:    RST 10H
+L_EE5A:    LD A, 0x4E
+L_EE5C:    RST 10H
+L_EE5D:    LD A, 0x0D
+L_EE5F:    RST 10H
+L_EE60:    POP HL
+L_EE61:    DB 0x4A
+L_EE62:    DB 0x5E
+L_EE63:    INC HL
+L_EE64:    DB 0x56
+L_EE65:    INC HL
+L_EE66:    LD A, (0x5C08)
+L_EE69:    INC DE
+L_EE6A:    LD (DE), A
+L_EE6B:    DB 0x5E
+L_EE6C:    INC HL
+L_EE6D:    DB 0x56
+L_EE6E:    INC HL
+L_EE6F:    EX DE, HL
+L_EE70:    INC HL
+L_EE71:    DB 0x70
+L_EE72:    INC HL
+L_EE73:    INC HL
+L_EE74:    INC HL
+L_EE75:    INC HL
+L_EE76:    LD A, C
+L_EE77:    ADD A, A
+L_EE78:    ADD A, A
+L_EE79:    ADD A, A
+L_EE7A:    DB 0xC6
+L_EE7B:    LD B, A
+L_EE7C:    LD (HL), A
+L_EE7D:    EX DE, HL
+L_EE7E:    POP BC
+L_EE7F:    DJNZ -98 ; -> L_EE1F
+L_EE81:    RET
+L_EE82:    LD B, A
+L_EE83:    DB 0xE9
+L_EE84:    LD DE, 0x4BE9
+L_EE87:    DB 0xE9
+L_EE88:    LD A, (DE)
+L_EE89:    DB 0xE9
+L_EE8A:    LD C, A
+L_EE8B:    DB 0xE9
+L_EE8C:    LD (0x54E9), HL
+L_EE8F:    DB 0xE9
+L_EE90:    DEC HL
+L_EE91:    DB 0xE9
+L_EE92:    DB 0x59
+L_EE93:    DB 0xE9
+L_EE94:    DB 0x34
+L_EE95:    DB 0xE9
+L_EE96:    ADD A, B
+L_EE97:    DB 0x41
+L_EE98:    DB 0x62
+L_EE99:    DB 0x6F
+L_EE9A:    DB 0x72
+L_EE9B:    DB 0x74
+L_EE9C:    JR NZ, +111 ; -> L_EF0D
+L_EE9E:    DB 0x6E
+L_EE9F:    DB 0x65
+L_EEA0:    JR NZ, +108 ; -> L_EF0E
+L_EEA2:    DB 0x69
+L_EEA3:    DB 0x66
+L_EEA4:    DB 0x65
+L_EEA5:    DB 0xBA
+L_EEA6:    DB 0x44
+L_EEA7:    DB 0x6F
+L_EEA8:    LD (HL), A
+L_EEA9:    DB 0x6E
+L_EEAA:    JR NZ, -70 ; -> L_EE66
+L_EEAC:    DB 0x55
+L_EEAD:    DB 0x70
+L_EEAE:    JR NZ, +32 ; -> L_EED0
+L_EEB0:    JR NZ, -70 ; -> L_EE6C
+L_EEB2:    DB 0x52
+L_EEB3:    DB 0x69
+L_EEB4:    DB 0x67
+L_EEB5:    DB 0x68
+L_EEB6:    DB 0x74
+L_EEB7:    DB 0xBA
+L_EEB8:    DB 0x4C
+L_EEB9:    DB 0x65
+L_EEBA:    DB 0x66
+L_EEBB:    DB 0x74
+L_EEBC:    JR NZ, -70 ; -> L_EE78
+L_EEBE:    DB 0x76
+L_EEBF:    XOR A
+L_EEC0:    DB 0xDB
+L_EEC1:    DB 0x38
+L_EEC2:    LD A, (0x0000)
+L_EEC5:    CP 0xF3
+L_EEC7:    DB 0xC8
+L_EEC8:    DI
+L_EEC9:    LD HL, 0xEE6F
+L_EECC:    CALL 0x0220
+L_EECF:    XOR A
+L_EED0:    DB 0xDB
+L_EED1:    DB 0x38
+L_EED2:    EI
+L_EED3:    RET
+L_EED4:    INC D
+L_EED5:    NOP
+L_EED6:    DB 0x4C
+L_EED7:    DB 0x45
+L_EED8:    DB 0x46
+L_EED9:    DB 0x55
+L_EEDA:    DB 0x4C
+L_EEDB:    DB 0x43
+L_EEDC:    DB 0x55
+L_EEDD:    DB 0x4D
+L_EEDE:    DB 0x50
+L_EEDF:    DB 0x4C
+L_EEE0:    JR Z, +69 ; -> L_EF27
+L_EEE2:    DB 0x45
+L_EEE3:    ADD HL, HL
+L_EEE4:    DB 0x54
+L_EEE5:    DB 0x49
+L_EEE6:    JR Z, +68 ; -> L_EF2C
+L_EEE8:    DB 0x44
+L_EEE9:    ADD HL, HL
+L_EEEA:    LD DE, 0xEE9E
+L_EEED:    LD HL, (0x5C3D)
+L_EEF0:    DB 0x4E
+L_EEF1:    DB 0x73
+L_EEF2:    INC HL
+L_EEF3:    DB 0x46
+L_EEF4:    DB 0x72
+L_EEF5:    DB 0xED
+L_EEF6:    DB 0x43
+L_EEF7:    DB 0xE7
+L_EEF8:    DB 0xEE
+L_EEF9:    LD BC, 0x0000
+L_EEFC:    LD A, (0x5C3B)
+L_EEFF:    LD (0xEEE9), A
+L_EF02:    RET
+L_EF03:    DB 0xFD
+L_EF04:    DB 0xCB
+L_EF05:    LD BC, 0xCDA6
+L_EF08:    DB 0x30
+L_EF09:    DB 0x25
+L_EF0A:    JR NZ, +7 ; -> L_EF13
+L_EF0C:    LD HL, 0xEE9E
+L_EF0F:    PUSH HL
+L_EF10:    JP 0x12B7
+L_EF13:    LD A, (0x5C3A)
+L_EF16:    CP 0x14
+L_EF18:    JR Z, +18 ; -> L_EF2C
+L_EF1A:    CP 0x0C
+L_EF1C:    JR Z, +23 ; -> L_EF35
+L_EF1E:    CP 0x10
+L_EF20:    JR Z, +19 ; -> L_EF35
+L_EF22:    LD HL, (0xEEE7)
+L_EF25:    LD A, (0xEEE9)
+L_EF28:    LD (0x5C3B), A
+L_EF2B:    DB 0xE9
+L_EF2C:    DB 0xFD
+L_EF2D:    DB 0x34
+L_EF2E:    DEC C
+L_EF2F:    DB 0xFD
+L_EF30:    DB 0xCB
+L_EF31:    LD A, (BC)
+L_EF32:    LD A, (HL)
+L_EF33:    JR Z, +12 ; -> L_EF41
+L_EF35:    LD HL, (0x5C45)
+L_EF38:    LD (0x5C42), HL
+L_EF3B:    LD A, (0x5C47)
+L_EF3E:    LD (0x5C44), A
+L_EF41:    LD HL, 0xEE9E
+L_EF44:    PUSH HL
+L_EF45:    DB 0xFD
+L_EF46:    LD (HL), 0x00
+L_EF48:    DB 0xFF
+L_EF49:    JP 0x1B7D
+L_EF4C:    INC BC
+L_EF4D:    INC DE
+L_EF4E:    DB 0xCC
+L_EF4F:    DB 0xDD
+L_EF50:    LD HL, 0xEF07
+L_EF53:    LD DE, 0x0011
+L_EF56:    XOR A
+L_EF57:    CALL 0x04C2
+L_EF5A:    LD B, 0x32
+L_EF5C:    DB 0x76
+L_EF5D:    DJNZ -3 ; -> L_EF5C
+L_EF5F:    DB 0xDD
+L_EF60:    LD HL, 0x3E00
+L_EF63:    LD DE, 0xC400
+L_EF66:    LD A, 0xFF
+L_EF68:    CALL 0x04C2
+L_EF6B:    RET
+L_EF6C:    INC BC
+L_EF6D:    EX AF, AF'
+L_EF6E:    EX AF, AF'
+L_EF6F:    EX AF, AF'
+L_EF70:    EX AF, AF'
+L_EF71:    EX AF, AF'
+L_EF72:    EX AF, AF'
+L_EF73:    EX AF, AF'
+L_EF74:    EX AF, AF'
+L_EF75:    LD B, 0x06
+L_EF77:    DB 0xFF
+L_EF78:    JP 0x3E00
+L_EF7B:    NOP
+L_EF7C:    NOP
+L_EF7D:    LD DE, 0x6E01
+L_EF80:    LD HL, 0x6E00
+L_EF83:    LD BC, 0x0040
+L_EF86:    LD (HL), 0x03
+L_EF88:    LDIR
+L_EF8A:    LD (HL), 0x00
+L_EF8C:    LD BC, 0x00BF
+L_EF8F:    LDIR
+L_EF91:    LD HL, 0xEF54
+L_EF94:    LD B, 0x06
+L_EF96:    PUSH BC
+L_EF97:    LD BC, 0x0010
+L_EF9A:    LDIR
+L_EF9C:    PUSH HL
+L_EF9D:    LD HL, 0x0030
+L_EFA0:    ADD HL, DE
+L_EFA1:    EX DE, HL
+L_EFA2:    POP HL
+L_EFA3:    POP BC
+L_EFA4:    DJNZ -16 ; -> L_EF96
+L_EFA6:    DB 0x62
+L_EFA7:    DB 0x6B
+L_EFA8:    INC DE
+L_EFA9:    LD (HL), 0x03
+L_EFAB:    LD BC, 0x0010
+L_EFAE:    LDIR
+L_EFB0:    LD HL, 0x0000
+L_EFB3:    LD (0x5C7D), HL
+L_EFB6:    JP 0xE600
+L_EFB9:    LD E, 0x00
+L_EFBB:    NOP
+L_EFBC:    NOP
+L_EFBD:    LD E, 0x00
+L_EFBF:    NOP
+L_EFC0:    LD E, 0x1E
+L_EFC2:    NOP
+L_EFC3:    NOP
+L_EFC4:    LD E, 0x00
+L_EFC6:    NOP
+L_EFC7:    NOP
+L_EFC8:    LD E, 0x1E
+L_EFCA:    NOP
+L_EFCB:    NOP
+L_EFCC:    NOP
+L_EFCD:    LD E, 0x00
+L_EFCF:    LD E, 0x00
+L_EFD1:    NOP
+L_EFD2:    LD E, 0x00
+L_EFD4:    LD E, 0x00
+L_EFD6:    NOP
+L_EFD7:    NOP
+L_EFD8:    LD E, 0x1E
+L_EFDA:    NOP
+L_EFDB:    NOP
+L_EFDC:    NOP
+L_EFDD:    LD E, 0x00
+L_EFDF:    LD E, 0x00
+L_EFE1:    NOP
+L_EFE2:    LD E, 0x00
+L_EFE4:    LD E, 0x00
+L_EFE6:    NOP
+L_EFE7:    NOP
+L_EFE8:    LD E, 0x1E
+L_EFEA:    NOP
+L_EFEB:    LD E, 0x00
+L_EFED:    LD E, 0x00
+L_EFEF:    LD E, 0x00
+L_EFF1:    NOP
+L_EFF2:    LD E, 0x00
+L_EFF4:    LD E, 0x00
+L_EFF6:    NOP
+L_EFF7:    NOP
+L_EFF8:    LD E, 0x1E
+L_EFFA:    NOP
+L_EFFB:    LD E, 0x00
+L_EFFD:    LD E, 0x00
+L_EFFF:    LD E, 0x00

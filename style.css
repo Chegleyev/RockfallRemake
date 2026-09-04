@@ -1,0 +1,328 @@
+/* Modern Retro Arcade Styling for Rockfall Remaster */
+:root {
+  --bg-color: #0d0f14;
+  --panel-bg: #151922;
+  --border-color: #2a3346;
+  --accent-cyan: #00f0ff;
+  --accent-magenta: #ff0077;
+  --accent-yellow: #ffe600;
+  --accent-green: #00ff66;
+  --text-primary: #e2e8f0;
+  --font-retro: 'Press Start 2P', monospace, sans-serif;
+  --font-mono: 'Share Tech Mono', monospace, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-retro);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1280px;
+  max-height: 900px;
+  background: var(--panel-bg);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.15), 0 0 80px rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header / Status Bar */
+#game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #090b10;
+  border-bottom: 2px solid var(--border-color);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.hud-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-label {
+  color: #7a889b;
+}
+
+.hud-val {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+.hud-jewels-box .hud-val {
+  color: var(--accent-yellow);
+  text-shadow: 0 0 10px rgba(255, 230, 0, 0.8);
+}
+
+.arcade-hud-btn {
+  background: rgba(255, 0, 119, 0.15);
+  color: #ff3388;
+  border: 1px solid rgba(255, 0, 119, 0.5);
+  font-family: var(--font-retro);
+  font-size: 9px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 0 8px rgba(255, 0, 119, 0.2);
+}
+
+.arcade-hud-btn:hover {
+  background: var(--accent-magenta);
+  color: #ffffff;
+  border-color: #ff0077;
+  box-shadow: 0 0 15px rgba(255, 0, 119, 0.6);
+  transform: translateY(-1px);
+}
+
+.arcade-hud-btn:active {
+  transform: translateY(1px);
+}
+
+.pulse {
+  animation: pulse-anim 1.2s infinite alternate;
+}
+
+@keyframes pulse-anim {
+  from { transform: scale(1); filter: brightness(1); }
+  to { transform: scale(1.08); filter: brightness(1.3); }
+}
+
+/* Main Canvas Wrapper */
+#canvas-wrapper {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Overlay Card */
+#game-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+#game-overlay.hidden {
+  display: none;
+}
+
+#overlay-card {
+  background: #151a24;
+  border: 2px solid var(--accent-cyan);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+  padding: 32px 48px;
+  text-align: center;
+  border-radius: 8px;
+  animation: pop-in 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop-in {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+#overlay-title {
+  font-size: 20px;
+  color: var(--accent-yellow);
+  margin-bottom: 12px;
+  text-shadow: 0 0 10px rgba(255, 230, 0, 0.6);
+}
+
+#overlay-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 24px;
+}
+
+.arcade-btn {
+  background: var(--accent-magenta);
+  color: #fff;
+  border: none;
+  font-family: var(--font-retro);
+  font-size: 12px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 0, 119, 0.4);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.arcade-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 119, 0.6);
+}
+
+.arcade-btn:active {
+  transform: translateY(1px);
+}
+
+/* Toolbar Footer */
+#game-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #090b10;
+  border-top: 2px solid var(--border-color);
+  font-size: 11px;
+  gap: 16px;
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arcade-select {
+  background: #1a2232;
+  color: var(--accent-cyan);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-retro);
+  font-size: 10px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.arcade-toggle-btn {
+  background: #1a2232;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-retro);
+  font-size: 9px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.arcade-toggle-btn:hover {
+  border-color: var(--accent-cyan);
+  background: #232d42;
+}
+
+.arcade-toggle-btn .highlight {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 6px rgba(0, 240, 255, 0.5);
+}
+
+input[type="range"] {
+  accent-color: var(--accent-cyan);
+  cursor: pointer;
+  width: 120px;
+  height: 6px;
+  border-radius: 3px;
+}
+
+.fps-counter {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: #64748b;
+}
+
+.fps-counter span span {
+  color: var(--accent-green);
+}
+
+/* Mobile Controls */
+#mobile-controls {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  left: 20px;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  #mobile-controls {
+    display: block;
+  }
+  #game-header {
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+  #game-toolbar {
+    font-size: 9px;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+}
+
+.d-pad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.d-mid {
+  display: flex;
+  gap: 12px;
+}
+
+.d-btn {
+  width: 48px;
+  height: 48px;
+  background: rgba(30, 41, 59, 0.85);
+  border: 2px solid var(--accent-cyan);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  touch-action: manipulation;
+}
+
+.d-btn:active {
+  background: var(--accent-cyan);
+  color: #000;
+}

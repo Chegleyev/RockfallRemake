@@ -1,0 +1,50 @@
+# ===================================================================
+# Rockfall WebGL - Git Ignore Configuration
+# ===================================================================
+
+# macOS / OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Scratch and temporary directories (e.g. browser test profiles)
+scratch/
+tmp/
+temp/
+
+# Intermediate reverse-engineering memory dumps
+# (can be re-generated anytime from ROCKFLDK.SCL via tools/unpack_scl.py)
+*.bin
+ram_unpacked.bin
+rockfall_unpacked_ram.bin
+
+# Root standalone build duplicate (canonical build is located in dist/rockfall.html)
+rockfall_standalone.html
+
+# Node & Package Managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python bytecode & environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+.venv/
+env/
+
+# IDE / Editor configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~

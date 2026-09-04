@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Rockfall (ZX Spectrum) — Modern WebGL Remaster</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app-container">
+    <!-- Header / Status Bar (inspired by ZX Spectrum Rockfall HUD) -->
+    <header id="game-header">
+      <div class="hud-item"><span class="hud-label">SCORE:</span> <span id="hud-score" class="hud-val">00000</span></div>
+      <div class="hud-item"><span class="hud-label">LEVEL:</span> <span id="hud-level" class="hud-val">01</span></div>
+      <div class="hud-item"><span class="hud-label">LIVES:</span> <span id="hud-lives" class="hud-val">05</span></div>
+      <div class="hud-item hud-jewels-box"><span class="hud-label">JEWELS:</span> <span id="hud-jewels" class="hud-val pulse">33</span></div>
+      <div class="hud-item hud-reset-box">
+        <button id="btn-restart-level" class="arcade-hud-btn" title="Restart Level (R or Esc)">↺ RESET [R]</button>
+      </div>
+    </header>
+
+    <!-- Main Game Canvas Container -->
+    <main id="canvas-wrapper">
+      <canvas id="game-canvas"></canvas>
+      
+      <!-- Overlay Messages (Game Over, Level Complete, Ready) -->
+      <div id="game-overlay" class="hidden">
+        <div id="overlay-card">
+          <h2 id="overlay-title">LEVEL COMPLETE!</h2>
+          <p id="overlay-subtitle">500 BONUS POINTS</p>
+          <button id="overlay-btn" class="arcade-btn">CONTINUE</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom Controls & Settings Toolbar -->
+    <footer id="game-toolbar">
+      <div class="toolbar-group">
+        <label for="level-select">LEVEL:</label>
+        <select id="level-select" class="arcade-select"></select>
+      </div>
+
+      <div class="toolbar-group">
+        <label for="speed-slider">SPEED: <span id="speed-label">+10%</span></label>
+        <input type="range" id="speed-slider" min="1.0" max="1.20" step="0.01" value="1.10">
+      </div>
+
+      <div class="toolbar-group toggles">
+        <button id="btn-toggle-graphics" class="arcade-toggle-btn" title="Toggle Classic Spectrum / Modern HD">
+          MODE: <span id="gfx-mode-label" class="highlight">MODERN HD</span>
+        </button>
+        <button id="btn-toggle-crt" class="arcade-toggle-btn" title="Toggle CRT Scanline Shader">
+          CRT: <span id="crt-mode-label">OFF</span>
+        </button>
+        <button id="btn-toggle-audio" class="arcade-toggle-btn" title="Toggle Sound">
+          AUDIO: <span id="audio-mode-label" class="highlight">ON</span>
+        </button>
+      </div>
+
+      <div class="toolbar-group fps-counter">
+        <span>FPS: <span id="fps-val">60</span></span>
+      </div>
+    </footer>
+
+    <!-- Mobile Touch D-Pad Overlay (hidden on desktop) -->
+    <div id="mobile-controls">
+      <div class="d-pad">
+        <button id="btn-up" class="d-btn up">▲</button>
+        <div class="d-mid">
+          <button id="btn-left" class="d-btn left">◀</button>
+          <button id="btn-down" class="d-btn down">▼</button>
+          <button id="btn-right" class="d-btn right">▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js?v=9"></script>
+</body>
+</html>
